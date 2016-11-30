@@ -15,9 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-import jp.ac.asojuku.managingeatout.DTO.UserInfoDTO;
+import jp.ac.asojuku.managingeatout.DTO.MenuInfoDTO;
 
-public class MemberUpdateAction extends HttpServlet {
+public class MenuUpdateAction extends HttpServlet {
 
 	/* (非 Javadoc)
 	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
@@ -25,18 +25,19 @@ public class MemberUpdateAction extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String us_id = "00000000";
+		String mn_id = "00000002";
 
 
 		try {
-			UserInfoDTO userInfo = getMemberInfoByUserPassword(us_id);
+			MenuInfoDTO menuInfo = getMemberInfoByUserPassword(mn_id);
 
-			req.setAttribute("us_id",us_id);
-			req.setAttribute("shimei", userInfo.getUs_name());
-			req.setAttribute("birthday", userInfo.getUs_birth());
-			req.setAttribute("seibetsu", userInfo.getUs_gender());
-			req.setAttribute("adress", userInfo.getUs_address());
-			req.setAttribute("password", userInfo.getUs_pass());
+			req.setAttribute("mn_id", mn_id);
+			req.setAttribute("tenpoid", menuInfo.getMn_restid());
+			req.setAttribute("menunamae", menuInfo.getMn_name());
+			req.setAttribute("kakaku",menuInfo.getMn_price());
+			req.setAttribute("genre", menuInfo.getMn_cat());
+			req.setAttribute("kikan1", menuInfo.getMn_startdate());
+			req.setAttribute("kikan2", menuInfo.getMn_enddate());
 
 		} catch (SQLException e) {
 			// TODO 自動生成された catch ブロック
@@ -47,13 +48,13 @@ public class MemberUpdateAction extends HttpServlet {
 		}
 
 
-		RequestDispatcher rd = req.getRequestDispatcher("view/member_update.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("view/menu_update.jsp");
 		// TODO 自動生成されたメソッド・スタブ
 		rd.forward (req, resp);
 	}
 
-	//private UserInfoDTO getMemberInfoByUserPassword(String userName,String password)
-	private UserInfoDTO getMemberInfoByUserPassword(String us_id)
+	//private MenuInfoDTO getMemberInfoByUserPassword(String menuid,String password)
+	private MenuInfoDTO getMemberInfoByUserPassword(String mn_id)
 			throws SQLException, NamingException{
 
 
@@ -61,7 +62,7 @@ public class MemberUpdateAction extends HttpServlet {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		InitialContext ctx;
-		UserInfoDTO userinfo = null;
+		MenuInfoDTO menuinfo = null;
 
 		try {
 			ctx = new InitialContext();
@@ -73,10 +74,10 @@ public class MemberUpdateAction extends HttpServlet {
 			con = ds.getConnection();
 
 			// ステートメント生成
-			ps = con.prepareStatement("select * from user where us_id =?");
+			ps = con.prepareStatement("select * from menu where mn_id =?");
 
 			// パラメータをセット
-	        ps.setString(1, us_id);
+	        ps.setString(1, mn_id);
 
 
 			// SQLを実行
@@ -84,13 +85,14 @@ public class MemberUpdateAction extends HttpServlet {
 
 			//値を取り出す
 			while(rs.next()){
-				userinfo = new UserInfoDTO();
-				userinfo.setUs_mail( rs.getString("us_mail") );
-				userinfo.setUs_name( rs.getString("us_name") );
-				userinfo.setUs_birth( rs.getDate("us_birth") );
-				userinfo.setUs_gender( rs.getString("us_gender") );
-				userinfo.setUs_address(rs.getString("us_address") );
-				userinfo.setUs_pass( rs.getString("us_pass") );
+				menuinfo = new MenuInfoDTO();
+				menuinfo.setMn_id( rs.getString("mn_id") );
+				menuinfo.setMn_restid( rs.getString("mn_restid"));
+				menuinfo.setMn_name( rs.getString("mn_name") );
+				menuinfo.setMn_price( rs.getInt("mn_price"));
+				menuinfo.setMn_cat( rs.getString("mn_cat") );
+				menuinfo.setMn_startdate(rs.getDate("mn_startdate") );
+				menuinfo.setMn_enddate( rs.getDate("mn_enddate") );
 
 				//logonInfo = new LogonInfoDTO();
 				//logonInfoへ値を入れる
@@ -116,7 +118,7 @@ public class MemberUpdateAction extends HttpServlet {
 
 		}
 
-		return userinfo;
+		return menuinfo;
 
 	}
 }

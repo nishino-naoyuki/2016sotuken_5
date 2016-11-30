@@ -1,4 +1,4 @@
-package insyoku;
+package jp.ac.asojuku.managingeatout.check;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -1,4 +1,4 @@
-package insyoku;
+package jp.ac.asojuku.managingeatout.check;
 
 import java.io.IOException;
 import java.util.Date;

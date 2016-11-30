@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+
+<servlet>
+	<servlet-name>View_displayHome</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.View_displayHome</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>View_displayLogin</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.View_displayLogin</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>View_displayLogout</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.View_displayLogout</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>Cont_authUser</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.Cont_authUser</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>View_displayMenudisp</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.View_displayMenudisp</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>Cont_addMenuBo</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.bo.Cont_addMenuBo</servlet-class>
+</servlet>
+
+
+<servlet-mapping>
+	<servlet-name>View_displayHome</servlet-name>
+	<url-pattern>/vdisho</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>View_displayLogin</servlet-name>
+	<url-pattern>/vdisli</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>View_displayLogout</servlet-name>
+	<url-pattern>/vdislo</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>Cont_authUser</servlet-name>
+	<url-pattern>/cautus</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>View_displayMenudisp</servlet-name>
+	<url-pattern>/vdismd</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>Cont_addMenuBo</servlet-name>
+	<url-pattern>/caddmn</url-pattern>
+</servlet-mapping>
+
+
+<resource-ref>
+	<res-ref-name>jdbc/safres_data</res-ref-name>
+	<res-type>javax.sql.DataSource</res-type>
+	<res-auth>Container</res-auth>
+</resource-ref>
+
+</web-app>

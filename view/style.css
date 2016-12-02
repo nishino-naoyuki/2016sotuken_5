@@ -1,4 +1,5 @@
-﻿@charset "utf-8";
+﻿/* Author:Emura */
+@charset "utf-8";
 
 body{
 	background-color:#FFEFD5;
@@ -7,7 +8,6 @@ body{
 #background{
 	width:960px;
 	min-width:960px;
-
 	margin-right:auto;
 	margin-left:auto;
 	text-align:center;
@@ -43,7 +43,6 @@ body{
 	/* font-size:36px; */
 }
 
-
 .status{
 	position:absolute;
 	border:2px #D2691E ridge;
@@ -63,7 +62,6 @@ body{
 	width:512px;
 }
 
-
 #pankuzu{
 	position:static;
 	padding-top:10px;
@@ -72,9 +70,7 @@ body{
 	bottom:0px;
 	text-align:left;
 	background-color:#FFDEAD;
-
 }
-
 
 #mainbody{
 	text-align:center;

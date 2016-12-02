@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
+
+  <display-name>Welcome to Tomcat</display-name>
+  <description>
+     Welcome to Tomcat
+  </description>
+
+  <servlet>
+  		<servlet-name>MyDBAccess</servlet-name>
+		<servlet-class>insyoku.MyDBAccess</servlet-class>
+  </servlet>
+
+  <servlet>
+  		<servlet-name>MyUtil</servlet-name>
+		<servlet-class>insyoku.MyUtil</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ChartServlet</servlet-name>
+    <servlet-class>insyoku.ChartServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>KakeiboCheck</servlet-name>
+    <servlet-class>insyoku.KakeiboCheck</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>CheckItem</servlet-name>
+    <servlet-class>insyoku.CheckItem</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>UserAddCheck</servlet-name>
+    <servlet-class>insyoku.UserAddCheck</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>UserCheckStock</servlet-name>
+    <servlet-class>insyoku.UserCheckStock</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>UserAddCheckAction</servlet-name>
+    <servlet-class>insyoku.UserAddCheckAction</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>DateUtils</servlet-name>
+    <servlet-class>insyoku.DateUtils</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>KakeiboUpdate</servlet-name>
+    <servlet-class>insyoku.KakeiboUpdate</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+  		<servlet-name>MyDBAccess</servlet-name>
+  		<url-pattern>/MyDBAccess</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+  		<servlet-name>MyUtil</servlet-name>
+  		<url-pattern>/MyUtil</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ChartServlet</servlet-name>
+    <url-pattern>/chart.jpg</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>KakeiboCheck</servlet-name>
+    <url-pattern>/KakeiboCheck</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>CheckItem</servlet-name>
+    <url-pattern>/CheckItem</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>UserAddCheck</servlet-name>
+    <url-pattern>/UserAddCheck</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>UserCheckStock</servlet-name>
+    <url-pattern>/UserCheckStock</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>UserAddCheckAction</servlet-name>
+    <url-pattern>/UserAddCheckAction</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>DateUtils</servlet-name>
+    <url-pattern>/DateUtils</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>KakeiboUpdate</servlet-name>
+    <url-pattern>/KakeiboUpdate</url-pattern>
+  </servlet-mapping>
+
+</web-app>

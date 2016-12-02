@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<web-app>
+
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>jp.ac.asojuku.managingeatout.filter.EncodingFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+
+
+<servlet>
+	<servlet-name>MemberUpdate</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.MemberUpdateAction</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>ConfirmEntrymenber</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.ConfirmEntrymenberAction</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>MemberFinish</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.MemberFinishAction</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>MemberComplete</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.view.MemberComplete.jsp</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>MenuUpdate</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.MenuUpdateAction</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>MemberUpdate</servlet-name>
+	<url-pattern>/member_update</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>ConfirmEntrymenber</servlet-name>
+	<url-pattern>/confirmEntrymenber</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>MemberFinish</servlet-name>
+	<url-pattern>/memberFinish</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>MemberComplete</servlet-name>
+	<url-pattern>/membercomplete</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>MenuUpdate</servlet-name>
+	<url-pattern>/menu_update</url-pattern>
+</servlet-mapping>
+
+</web-app>

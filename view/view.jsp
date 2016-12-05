@@ -3,8 +3,8 @@
 
 <head>
 
-<%@ page import="jp.ac.asojuku.gurunabiapi.json.RestSearchJson" %>
-<%@ page import="jp.ac.asojuku.gurunabiapi.json.RestSearchJson.Rest" %>
+<%@ page import="jp.ac.asojuku.managingeatout.json.RestSearchJson" %>
+<%@ page import="jp.ac.asojuku.managingeatout.json.RestSearchJson.Rest" %>
 <%@ page contentType="text/html; charset=utf-8" %>
 <titel>飲食店検索</titel>
 </head>

@@ -56,7 +56,7 @@ public class KakeiboUpdate extends HttpServlet {
         	// パラメータをセット
         	ps.setString(1,"0000000001");
         	ps.setString(2,restname);
-        	ps.setDate(3,new java.sql.Date(DateUtils.toDate(adddate).getTime()));
+        	ps.setDate(3,new java.sql.Date(jp.ac.asojuku.managingeatout.check.DateUtils.toDate(adddate).getTime()));
         	ps.setInt(4,itotalmoney);
 
 	        // SQLを実行

@@ -1,10 +1,10 @@
 /**
  *
  */
-package jp.ac.asojuku.gurunabiapi.json;
+package jp.ac.asojuku.managingeatout.json;
 
 /**
- * “s“¹•{Œ§ŒŸõAPIŒ‹‰Ê•ÛƒNƒ‰ƒX
+ * éƒ½é“åºœçœŒæ¤œç´¢APIçµæœä¿æŒã‚¯ãƒ©ã‚¹
  * @author nishino
  *
  */
@@ -24,9 +24,9 @@ public class PrefSearchJson extends GurunaviAPIBaseJson {
 
 	//pref
 	public static class Pref{
-		private String pref_code;  //“s“¹•{Œ§ƒR[ƒh
-		private String pref_name;  //“s“¹•{Œ§–¼Ì
-		private String area_code;  //Š‘®ƒGƒŠƒAƒR[ƒh
+		private String pref_code;  //éƒ½é“åºœçœŒã‚³ãƒ¼ãƒ‰
+		private String pref_name;  //éƒ½é“åºœçœŒåç§°
+		private String area_code;  //æ‰€å±ã‚¨ãƒªã‚¢ã‚³ãƒ¼ãƒ‰
 		public String getPref_code() {
 			return pref_code;
 		}

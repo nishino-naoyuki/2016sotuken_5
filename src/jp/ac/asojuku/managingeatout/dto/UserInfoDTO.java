@@ -1,4 +1,4 @@
-package jp.ac.asojuku.managingeatout.DTO;
+package jp.ac.asojuku.managingeatout.dto;
 
 import java.sql.Date;
 

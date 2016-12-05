@@ -1,11 +1,11 @@
-package jp.ac.asojuku.gurunabiapi.json;
+package jp.ac.asojuku.managingeatout.json;
 
 import com.fasterxml.jackson.annotation.JsonProperty;;
 
 /**
  * @author nishino
- * http://api.gnavi.co.jp/api/manual/restsearch/���Q�l�Ƀ��X�|���X�̃N���X���쐬
- * �u������v�ƂȂ��Ă���Ƃ���͔z��ɂ���
+ * http://api.gnavi.co.jp/api/manual/restsearch/を参考にレスポンスのクラスを作成
+ * 「複数回」となっているところは配列にする
  */
 public class RestSearchJson extends GurunaviAPIBaseJson{
 
@@ -71,7 +71,7 @@ public class RestSearchJson extends GurunaviAPIBaseJson{
 		}
 
 	}
-	//REST�N���X
+	//RESTクラス
 	public static class Rest{
 		@JsonProperty("@attributes")
 		private Order order;

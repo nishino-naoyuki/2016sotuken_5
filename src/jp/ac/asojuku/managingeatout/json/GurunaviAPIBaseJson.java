@@ -1,14 +1,14 @@
 /**
  *
  */
-package jp.ac.asojuku.gurunabiapi.json;
+package jp.ac.asojuku.managingeatout.json;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import jp.ac.asojuku.gurunabiapi.json.GurunaviAPIBaseJson.ApiVersion;
+import jp.ac.asojuku.managingeatout.json.GurunaviAPIBaseJson.ApiVersion;
 
 /**
- * 各APIのレスポンスに共通する部分
+ * 蜷БPI縺ｮ繝ｬ繧ｹ繝昴Φ繧ｹ縺ｫ蜈ｱ騾壹☆繧矩Κ蛻�
  * @author nishino
  *
  */

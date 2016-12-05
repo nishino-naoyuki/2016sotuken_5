@@ -1,7 +1,7 @@
 /**
  *
  */
-package jp.ac.asojuku.gurunabiapi.api;
+package jp.ac.asojuku.managingeatout.api;
 
 import java.io.IOException;
 
@@ -9,14 +9,14 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import jp.ac.asojuku.gurunabiapi.api.condition.RestSearchCondition;
-import jp.ac.asojuku.gurunabiapi.http.HttpException;
-import jp.ac.asojuku.gurunabiapi.http.HttpWarpper;
-import jp.ac.asojuku.gurunabiapi.json.PrefSearchJson;
-import jp.ac.asojuku.gurunabiapi.json.RestSearchJson;
+import jp.ac.asojuku.managingeatout.api.condition.RestSearchCondition;
+import jp.ac.asojuku.managingeatout.http.HttpException;
+import jp.ac.asojuku.managingeatout.http.HttpWarpper;
+import jp.ac.asojuku.managingeatout.json.PrefSearchJson;
+import jp.ac.asojuku.managingeatout.json.RestSearchJson;
 
 /**
- * ‚®‚éƒiƒrAPIƒNƒ‰ƒX
+ * ãã‚‹ãƒŠãƒ“APIã‚¯ãƒ©ã‚¹
  * @author nishino
  *
  */
@@ -26,20 +26,20 @@ public class GurunaviAPI {
 	private static final int PROXY_PORT = 80;
 
 	/**
-	 * ƒŒƒXƒgƒ‰ƒ“ŒŸõAPI
+	 * ãƒ¬ã‚¹ãƒˆãƒ©ãƒ³æ¤œç´¢API
 	 * @return
 	 */
 	public RestSearchJson execRestSearchAPI(RestSearchCondition condition){
 		RestSearchJson info = null;
 
 		try{
-			//Ú‘±ƒIƒuƒWƒFƒNƒgæ“¾
+			//æ¥ç¶šã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå–å¾—
 			HttpWarpper http = getHttpWarpper();
-			//ŒŸõğŒ‚Ìw’è
+			//æ¤œç´¢æ¡ä»¶ã®æŒ‡å®š
 			setRestSearchCondition(http,condition);
-			//HTTP’ÊMiGETj
+			//HTTPé€šä¿¡ï¼ˆGETï¼‰
 			String body = http.execGet("http://api.gnavi.co.jp/RestSearchAPI/20150630");
-			//JSONƒIƒuƒWƒFƒNƒg‚É•ÏŠ·
+			//JSONã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«å¤‰æ›
 			ObjectMapper mapper = new ObjectMapper();
 			info  = mapper.readValue(body, RestSearchJson.class);
 
@@ -57,7 +57,7 @@ public class GurunaviAPI {
 	}
 
 	/**
-	 * “s“¹•{Œ§ƒ}ƒXƒ^æ“¾API‚ÌÀs
+	 * éƒ½é“åºœçœŒãƒã‚¹ã‚¿å–å¾—APIã®å®Ÿè¡Œ
 	 * @return
 	 */
 	public PrefSearchJson execPrefSearchAPI(){
@@ -65,7 +65,7 @@ public class GurunaviAPI {
 		PrefSearchJson info = null;
 
 		try{
-			//Ú‘±ƒIƒuƒWƒFƒNƒgæ“¾
+			//æ¥ç¶šã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå–å¾—
 			HttpWarpper http = getHttpWarpper();
 			http.addRequestParameter("lang", "ja", false);
 
@@ -87,67 +87,67 @@ public class GurunaviAPI {
 		return info;
 	}
 
-	////////////////////////‚±‚±‚æ‚è‚µ‚½‚Íprivate‚Èƒƒ\ƒbƒh///////////////////////////
+	////////////////////////ã“ã“ã‚ˆã‚Šã—ãŸã¯privateãªãƒ¡ã‚½ãƒƒãƒ‰///////////////////////////
 	/**
-	 * HTTP‚ÌÚ‘±ƒIƒuƒWƒFƒNƒg‚ğæ“¾‚·‚é
+	 * HTTPã®æ¥ç¶šã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã™ã‚‹
 	 * @return
 	 */
 	private HttpWarpper getHttpWarpper(){
 
 		HttpWarpper http = new HttpWarpper();
 
-		//http.setProxyInfo(PROXY_HOST, PROXY_PORT);	//TODO:ƒvƒƒLƒV‚ª•s—v‚Ìê‡‚ÍƒRƒR‚ğÁ‚·
+		//http.setProxyInfo(PROXY_HOST, PROXY_PORT);	//TODO:ãƒ—ãƒ­ã‚­ã‚·ãŒä¸è¦ã®å ´åˆã¯ã‚³ã‚³ã‚’æ¶ˆã™
 		http.addRequestParameter("keyid", KEYID, false);
 		http.addRequestParameter("format", "json", false);
 
 		return http;
 	}
 	/**
-	 * ƒŒƒXƒgƒ‰ƒ“ŒŸõAPI‚ÌŒŸõğŒ‚ğƒZƒbƒg‚·‚é
+	 * ãƒ¬ã‚¹ãƒˆãƒ©ãƒ³æ¤œç´¢APIã®æ¤œç´¢æ¡ä»¶ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 	 * @param http
 	 * @param condition
 	 */
 	private void setRestSearchCondition(HttpWarpper http,RestSearchCondition condition){
 
 		if( condition == null ){
-			//ŒŸõğŒ‚Éw’è‚È‚µ
+			//æ¤œç´¢æ¡ä»¶ã«æŒ‡å®šãªã—
 			return;
 		}
 
-		//“X•Ü–¼‚Ìw’è
+		//åº—èˆ—åã®æŒ‡å®š
 		if( condition.getShopName() != null){
 			http.addRequestParameter("name", condition.getShopName(), true);
 		}
-		//’n•ûƒR[ƒh
+		//åœ°æ–¹ã‚³ãƒ¼ãƒ‰
 		if( condition.getArea() != null){
 			http.addRequestParameter("area", condition.getArea(), true);
 		}
-		//“s“¹•{Œ§ƒR[ƒh
+		//éƒ½é“åºœçœŒã‚³ãƒ¼ãƒ‰
 		if( condition.getPref() != null){
 			http.addRequestParameter("pref", condition.getPref(), true);
 		}
-		//ƒGƒŠƒALƒR[ƒh
+		//ã‚¨ãƒªã‚¢Lã‚³ãƒ¼ãƒ‰
 		if( condition.getAreacode_l() != null){
 			http.addRequestParameter("areacode_l", condition.getAreacode_l(), true);
 		}
-		//ƒGƒŠƒAMƒR[ƒh
+		//ã‚¨ãƒªã‚¢Mã‚³ãƒ¼ãƒ‰
 		if( condition.getAreacode_m() != null){
 			http.addRequestParameter("areacode_m", condition.getAreacode_m(), true);
 		}
-		//ƒGƒŠƒASƒR[ƒh
+		//ã‚¨ãƒªã‚¢Sã‚³ãƒ¼ãƒ‰
 		if( condition.getAreacode_s() != null){
 			http.addRequestParameter("areacode_s", condition.getAreacode_s(), true);
 		}
-		//‘å‹Æ‘ÔƒR[ƒh
+		//å¤§æ¥­æ…‹ã‚³ãƒ¼ãƒ‰
 		if( condition.getCategory_l() != null){
 			http.addRequestParameter("category_l", condition.getCategory_l(), true);
 		}
-		//¬‹Æ‘ÔƒR[ƒh
+		//å°æ¥­æ…‹ã‚³ãƒ¼ãƒ‰
 		if( condition.getCategory_s() != null){
 			http.addRequestParameter("category_s", condition.getCategory_s(), true);
 		}
 
-		//¬‹Æ‘ÔƒR[ƒh
+		//å°æ¥­æ…‹ã‚³ãƒ¼ãƒ‰
 		if( condition.getOffset_page() != null){
 			http.addRequestParameter("offset_page", condition.getOffset_page(), true);
 		}

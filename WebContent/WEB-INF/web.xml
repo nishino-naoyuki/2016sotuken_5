@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<web-app>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
 
   <filter>
     <filter-name>EncodingFilter</filter-name>
@@ -11,18 +16,217 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
+<!-- emura.xml��servlet -->
 
+<servlet>
+	<servlet-name>View_displayHome</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.View_displayHome</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>View_displayLogin</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.View_displayLogin</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>View_displayLogout</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.View_displayLogout</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>Cont_authUser</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.Cont_authUser</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>View_displayMenudisp</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.View_displayMenudisp</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>Cont_addMenuBo</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.bo.Cont_addMenuBo</servlet-class>
+</servlet>
+
+<!-- egawa.xml��servlet -->
+
+<servlet>
+	<servlet-name>TopAction</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.TopAction</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>CallApiAction</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.CallApiAction</servlet-class>
+</servlet>
+
+<!-- satou.xml��servlet -->
+
+<servlet>
+	<servlet-name>UserAddAction</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.UserAddAction</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>UserAddCheckAction</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.UserAddCheckAction</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>UserAddComp</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.UserAddComp</servlet-class>
+</servlet>
+
+<!-- masuto.xml��servlet -->
+
+  <servlet>
+    <servlet-name>KakeiboCheck</servlet-name>
+    <servlet-class>jp.ac.asojuku.managingeatout.action.KakeiboCheck</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>DateUtils</servlet-name>
+    <servlet-class>jp.ac.asojuku.managingeatout.action.DateUtils</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>KakeiboUpdate</servlet-name>
+    <servlet-class>jp.ac.asojuku.managingeatout.action.KakeiboUpdate</servlet-class>
+  </servlet>
+
+
+<!-- horiuti.xml��servlet -->
 
 <servlet>
 	<servlet-name>MemberUpdate</servlet-name>
 	<servlet-class>jp.ac.asojuku.managingeatout.action.MemberUpdateAction</servlet-class>
 </servlet>
 
+<servlet>
+	<servlet-name>ConfirmEntrymenber</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.ConfirmEntrymenberAction</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>MemberFinish</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.MemberFinishAction</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>MemberComplete</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.view.MemberComplete.jsp</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>MenuUpdate</servlet-name>
+	<servlet-class>jp.ac.asojuku.managingeatout.action.MenuUpdateAction</servlet-class>
+</servlet>
+
+<!--  -->
+
+
+<!-- emura.xml��servlet-mapping -->
+
+<servlet-mapping>
+	<servlet-name>View_displayHome</servlet-name>
+	<url-pattern>/vdisho</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>View_displayLogin</servlet-name>
+	<url-pattern>/vdisli</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>View_displayLogout</servlet-name>
+	<url-pattern>/vdislo</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>Cont_authUser</servlet-name>
+	<url-pattern>/cautus</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>View_displayMenudisp</servlet-name>
+	<url-pattern>/vdismd</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>Cont_addMenuBo</servlet-name>
+	<url-pattern>/caddmn</url-pattern>
+</servlet-mapping>
+
+<!-- egawa.xml��servlet-mapping -->
+
+<servlet-mapping>
+	<servlet-name>TopAction</servlet-name>
+	<url-pattern>/top</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>CallApiAction</servlet-name>
+	<url-pattern>/callapi</url-pattern>
+</servlet-mapping>
+
+<!-- satou.xml��servlet-mapping -->
+
+<servlet-mapping>
+	<servlet-name>UserAddAction</servlet-name>
+	<url-pattern>/useradd</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>UserAddCheckAction</servlet-name>
+	<url-pattern>/usercheck</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>UserAddComp</servlet-name>
+	<url-pattern>/usercomp</url-pattern>
+</servlet-mapping>
+
+<!-- masuto.xml��servlet-mapping -->
+
+  <servlet-mapping>
+    <servlet-name>KakeiboCheck</servlet-name>
+    <url-pattern>/KakeiboCheck</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>DateUtils</servlet-name>
+    <url-pattern>/DateUtils</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>KakeiboUpdate</servlet-name>
+    <url-pattern>/KakeiboUpdate</url-pattern>
+  </servlet-mapping>
+
+<!-- horiuti.xml��servlet-mapping -->
 
 <servlet-mapping>
 	<servlet-name>MemberUpdate</servlet-name>
 	<url-pattern>/member_update</url-pattern>
 </servlet-mapping>
 
+<servlet-mapping>
+	<servlet-name>ConfirmEntrymenber</servlet-name>
+	<url-pattern>/confirmEntrymenber</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>MemberFinish</servlet-name>
+	<url-pattern>/memberFinish</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>MemberComplete</servlet-name>
+	<url-pattern>/membercomplete</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>MenuUpdate</servlet-name>
+	<url-pattern>/menu_update</url-pattern>
+</servlet-mapping>
+
+<!-- emura.xml��resource-ref -->
+
+<resource-ref>
+	<res-ref-name>jdbc/safres_data</res-ref-name>
+	<res-type>javax.sql.DataSource</res-type>
+	<res-auth>Container</res-auth>
+</resource-ref>
 
 </web-app>

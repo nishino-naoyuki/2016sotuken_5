@@ -1,4 +1,4 @@
-package jp.ac.asojuku.gurunabiapi.action;
+package jp.ac.asojuku.managingeatout.action;
 
 import java.io.IOException;
 

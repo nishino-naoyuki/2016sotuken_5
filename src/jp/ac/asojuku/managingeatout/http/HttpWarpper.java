@@ -1,7 +1,7 @@
 /**
  *
  */
-package jp.ac.asojuku.gurunabiapi.http;
+package jp.ac.asojuku.managingeatout.http;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -28,7 +28,7 @@ import org.apache.http.util.EntityUtils;
 
 /**
  * @author nishino
- * Http’ÊM‚Ìƒ‰ƒbƒp[
+ * Httpé€šä¿¡ã®ãƒ©ãƒƒãƒ‘ãƒ¼
  */
 public class HttpWarpper {
 
@@ -40,7 +40,7 @@ public class HttpWarpper {
 
 
 	/**
-	 * ƒvƒƒLƒV‚Ìİ’è
+	 * ãƒ—ãƒ­ã‚­ã‚·ã®è¨­å®š
 	 * @param proxyHost
 	 * @param port
 	 */
@@ -49,7 +49,7 @@ public class HttpWarpper {
 	}
 
 	/**
-	 * HTTP’ÊM‚Å“n‚·ƒŠƒNƒGƒXƒgƒpƒ‰ƒ[ƒ^‚ğİ’è‚·‚é
+	 * HTTPé€šä¿¡ã§æ¸¡ã™ãƒªã‚¯ã‚¨ã‚¹ãƒˆãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã™ã‚‹
 	 * @param propertyName
 	 * @param value
 	 */
@@ -67,8 +67,8 @@ public class HttpWarpper {
 	}
 
 	/**
-	 * GET’ÊM‚ğs‚¢AƒŒƒXƒ|ƒ“ƒX‚ğ•Ô‚·
-	 * ƒGƒ‰[‚Ìê‡‚Í—áŠO‚ª”­¶‚·‚é
+	 * GETé€šä¿¡ã‚’è¡Œã„ã€ãƒ¬ã‚¹ãƒãƒ³ã‚¹ã‚’è¿”ã™
+	 * ã‚¨ãƒ©ãƒ¼ã®å ´åˆã¯ä¾‹å¤–ãŒç™ºç”Ÿã™ã‚‹
 	 * @param url
 	 * @return
 	 * @throws HttpException
@@ -77,22 +77,22 @@ public class HttpWarpper {
 		String body = "";
 
 		try {
-			//ƒŠƒNƒGƒXƒg‚Ìİ’è’l‚ğƒZƒbƒg
+			//ãƒªã‚¯ã‚¨ã‚¹ãƒˆã®è¨­å®šå€¤ã‚’ã‚»ãƒƒãƒˆ
 			RequestConfig requestConfig = getRequestConfig();
-			//ƒŠƒNƒGƒXƒgƒwƒbƒ_[‚ğƒZƒbƒg
+			//ãƒªã‚¯ã‚¨ã‚¹ãƒˆãƒ˜ãƒƒãƒ€ãƒ¼ã‚’ã‚»ãƒƒãƒˆ
 			List<BasicHeader> headers = getBasicHeaderList();
-			//Ú‘±‚ÌƒIƒuƒWƒFƒNƒg‚ğì¬
+			//æ¥ç¶šã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆ
 			CloseableHttpClient httpClient = HttpClientBuilder.create()
 		      .setDefaultRequestConfig(requestConfig)
 		      .setDefaultHeaders(headers).build();
 
-			//GET’ÊM‚ğs‚¤
+			//GETé€šä¿¡ã‚’è¡Œã†
 			HttpGet method = new HttpGet(makeGetURL(url));
 			HttpResponse response;
 			response = httpClient.execute(method);
 			int responseStatus = response.getStatusLine().getStatusCode();
 
-			//ƒŒƒXƒ|ƒ“ƒXƒ`ƒFƒbƒN
+			//ãƒ¬ã‚¹ãƒãƒ³ã‚¹ãƒã‚§ãƒƒã‚¯
 			if( responseStatus == HttpServletResponse.SC_OK){
 				body = EntityUtils.toString(response.getEntity(), "UTF-8");
 			}else{
@@ -114,7 +114,7 @@ public class HttpWarpper {
 	}
 
 	/**
-	 * ƒŠƒNƒGƒXƒg‚Ìİ’è’l‚ğƒZƒbƒg
+	 * ãƒªã‚¯ã‚¨ã‚¹ãƒˆã®è¨­å®šå€¤ã‚’ã‚»ãƒƒãƒˆ
 	 * @return
 	 */
 	private RequestConfig getRequestConfig(){
@@ -130,7 +130,7 @@ public class HttpWarpper {
 	}
 
 	/**
-	 * ƒŠƒNƒGƒXƒgƒwƒbƒ_[‚ğƒZƒbƒg
+	 * ãƒªã‚¯ã‚¨ã‚¹ãƒˆãƒ˜ãƒƒãƒ€ãƒ¼ã‚’ã‚»ãƒƒãƒˆ
 	 * @return
 	 */
 	private List<BasicHeader> getBasicHeaderList(){
@@ -144,9 +144,9 @@ public class HttpWarpper {
 	}
 
 	/**
-	 * Get—p‚ÌURL‚ğì¬‚·‚é
+	 * Getç”¨ã®URLã‚’ä½œæˆã™ã‚‹
 	 *  http://xxxxxx?param1=aaa&param2=bbbb&param3=cccc
-	 * ‚ğì‚é
+	 * ã‚’ä½œã‚‹
 	 * @param url
 	 * @return
 	 * @throws URISyntaxException
@@ -155,7 +155,7 @@ public class HttpWarpper {
 		StringBuffer sb = new StringBuffer();
 
 		sb.append(url);
-		//ƒpƒ‰ƒ[ƒ^‚ğƒZƒbƒg
+		//ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’ã‚»ãƒƒãƒˆ
 		int count = 0;
 		for (Entry<String, String> entry : paramMap.entrySet()) {
 			if( count == 0 ){

@@ -1,4 +1,4 @@
-package jp.ac.asojuku.food.check;
+package jp.ac.asojuku.managingeatout.check;
 
 public class CheckItem {
 

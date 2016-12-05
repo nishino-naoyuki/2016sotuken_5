@@ -1,4 +1,4 @@
-package jp.ac.asojuku.gurunabiapi.http;
+package jp.ac.asojuku.managingeatout.http;
 
 public class HttpException extends Exception{
 	private int statusCode;

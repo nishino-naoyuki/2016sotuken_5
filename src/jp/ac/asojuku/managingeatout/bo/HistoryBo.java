@@ -1,4 +1,4 @@
-package jp.ac.asojuku.food.bo;
+package jp.ac.asojuku.managingeatout.bo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-import jp.ac.asojuku.food.dto.HistoryDto;
+import jp.ac.asojuku.managingeatout.dto.HistoryDto;
 
 public class HistoryBo {
 	private static final String SELECT_History_SQL = "select hs_add,hs_restid FORM history WHERE hs_userid = ?";

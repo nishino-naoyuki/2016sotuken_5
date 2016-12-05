@@ -1,4 +1,4 @@
-package jp.ac.asojuku.food.bo;
+package jp.ac.asojuku.managingeatout.bo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

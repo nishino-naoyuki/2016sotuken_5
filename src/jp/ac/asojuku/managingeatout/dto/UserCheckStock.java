@@ -1,4 +1,4 @@
-package jp.ac.asojuku.food.dto;
+package jp.ac.asojuku.managingeatout.dto;
 
 public class UserCheckStock {
 	private String mail;

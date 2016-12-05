@@ -1,9 +1,9 @@
-package jp.ac.asojuku.food.check;
+package jp.ac.asojuku.managingeatout.check;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import jp.ac.asojuku.food.dto.UserCheckStock;
+import jp.ac.asojuku.managingeatout.dto.UserCheckStock;
 
 public class UserAddCheck {
 	private CheckItem CI = new CheckItem();

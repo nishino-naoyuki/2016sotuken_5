@@ -1,4 +1,4 @@
-package jp.ac.asojuku.food.action;
+package jp.ac.asojuku.managingeatout.action;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import jp.ac.asojuku.food.bo.UserAddBo;
+import jp.ac.asojuku.managingeatout.bo.UserAddBo;
 
 public class UserAddComp extends HttpServlet {
 

@@ -1,4 +1,4 @@
-package jp.ac.asojuku.gurunabiapi.action;
+package jp.ac.asojuku.managingeatout.action;
 
 import java.io.IOException;
 
@@ -37,39 +37,39 @@ public class CallApiAction extends HttpServlet {
 				page = "1";
 			}
 			///////////////////////////////////
-			//ƒŒƒXƒgƒ‰ƒ“ŒŸõAPI
+			//ãƒ¬ã‚¹ãƒˆãƒ©ãƒ³æ¤œç´¢API
 			RestSearchCondition condition = new RestSearchCondition(shopname,null,pref,null,null,null,null,null,page);
 			RestSearchJson rsj = gurunavi.execRestSearchAPI(condition);
 
 			req.setAttribute("RestSearchJson", rsj);
 			req.setAttribute("shopname", shopname);
 			req.setAttribute("pref", pref);
-			//Œ‹‰Ê‚ğæ“¾
-			/*System.out.println("****************ƒŒƒXƒgƒ‰ƒ“ŒŸõAPIÀsŒ‹‰Ê***********************");
+			//çµæœã‚’å–å¾—
+			/*System.out.println("****************ãƒ¬ã‚¹ãƒˆãƒ©ãƒ³æ¤œç´¢APIå®Ÿè¡Œçµæœ***********************");
 			for( Rest rest : rsj.getRest() ){
-				System.out.println("–¼‘OF"+rest.getName());
-				System.out.println("ƒJƒiF"+rest.getName_kana());
-				System.out.println("URLF"+rest.getUrl());
-				System.out.println("ZŠF"+rest.getAddress());
+				System.out.println("åå‰ï¼š"+rest.getName());
+				System.out.println("ã‚«ãƒŠï¼š"+rest.getName_kana());
+				System.out.println("URLï¼š"+rest.getUrl());
+				System.out.println("ä½æ‰€ï¼š"+rest.getAddress());
 				System.out.println(rest.getImage_url());
 				System.out.println("***************************************");
 			}*/
 
 			RequestDispatcher rd = req.getRequestDispatcher("view/view.jsp");
 			rd.forward(req, resp);
-			//“s“¹•{Œ§ƒ}ƒXƒ^æ“¾API
+			//éƒ½é“åºœçœŒãƒã‚¹ã‚¿å–å¾—API
 			PrefSearchJson psj = gurunavi.execPrefSearchAPI();
 
-			//Œ‹‰Ê‚ğæ“¾
-			/*System.out.println("****************“s“¹•{Œ§ƒ}ƒXƒ^æ“¾APIÀsŒ‹‰Ê***********************");
+			//çµæœã‚’å–å¾—
+			/*System.out.println("****************éƒ½é“åºœçœŒãƒã‚¹ã‚¿å–å¾—APIå®Ÿè¡Œçµæœ***********************");
 			for( Pref pref : psj.getPref() ){
-				System.out.println("ƒR[ƒhF"+pref.getPref_code());
-				System.out.println("–¼‘OF"+pref.getPref_name());
-				System.out.println("ƒGƒŠƒAƒR[ƒhF"+pref.getArea_code());
+				System.out.println("ã‚³ãƒ¼ãƒ‰ï¼š"+pref.getPref_code());
+				System.out.println("åå‰ï¼š"+pref.getPref_name());
+				System.out.println("ã‚¨ãƒªã‚¢ã‚³ãƒ¼ãƒ‰ï¼š"+pref.getArea_code());
 				System.out.println("***************************************");
 			}
 
-			 	//‚±‚±‚©‚ç«‚ÍAƒNƒ‰ƒX‚ğ•ª‚¯‚È‚©‚Á‚½ê‡
+			 	//ã“ã“ã‹ã‚‰â†“ã¯ã€ã‚¯ãƒ©ã‚¹ã‚’åˆ†ã‘ãªã‹ã£ãŸå ´åˆ
 				URI url;
 				url = new URI("http://api.gnavi.co.jp/RestSearchAPI/20150630/?keyid=de7457e0eafff5a5a63b4ce199d022e9&format=json");
 

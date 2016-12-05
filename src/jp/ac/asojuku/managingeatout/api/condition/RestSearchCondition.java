@@ -1,25 +1,25 @@
 /**
  *
  */
-package jp.ac.asojuku.gurunabiapi.api.condition;
+package jp.ac.asojuku.managingeatout.api.condition;
 
 /**
- * ƒŒƒXƒgƒ‰ƒ“ŒŸõğŒ
+ * ãƒ¬ã‚¹ãƒˆãƒ©ãƒ³æ¤œç´¢æ¡ä»¶
  * @author nishino
  *
- * http://api.gnavi.co.jp/api/manual/restsearch/@‚ÌƒŠƒNƒGƒXƒgƒpƒ‰ƒ[ƒ^‚©‚ç”²ˆ
- * –{“–‚Í‘S•”‚ ‚Á‚½‚Ù‚¤‚ª‚æ‚¢‚ªA”‚ª‘½‚¢‚Ì‚Åˆê•”‚¾‚¯‚É‚µ‚½B
+ * http://api.gnavi.co.jp/api/manual/restsearch/ã€€ã®ãƒªã‚¯ã‚¨ã‚¹ãƒˆãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‹ã‚‰æŠœç²‹
+ * æœ¬å½“ã¯å…¨éƒ¨ã‚ã£ãŸã»ã†ãŒã‚ˆã„ãŒã€æ•°ãŒå¤šã„ã®ã§ä¸€éƒ¨ã ã‘ã«ã—ãŸã€‚
  *
  */
 public class RestSearchCondition {
-	private String shopName;	//“X•Ü–¼
-	private String area;   		//’n•ûƒR[ƒh
-	private String pref;   		//“s“¹•{Œ§ƒR[ƒh
-	private String areacode_l;   //ƒGƒŠƒALƒR[ƒh
-	private String areacode_m;   //ƒGƒŠƒAMƒR[ƒh
-	private String areacode_s;   //ƒGƒŠƒASƒR[ƒh
-	private String category_l;   //‘å‹Æ‘ÔƒR[ƒh
-	private String category_s;   //¬‹Æ‘ÔƒR[ƒh
+	private String shopName;	//åº—èˆ—å
+	private String area;   		//åœ°æ–¹ã‚³ãƒ¼ãƒ‰
+	private String pref;   		//éƒ½é“åºœçœŒã‚³ãƒ¼ãƒ‰
+	private String areacode_l;   //ã‚¨ãƒªã‚¢Lã‚³ãƒ¼ãƒ‰
+	private String areacode_m;   //ã‚¨ãƒªã‚¢Mã‚³ãƒ¼ãƒ‰
+	private String areacode_s;   //ã‚¨ãƒªã‚¢Sã‚³ãƒ¼ãƒ‰
+	private String category_l;   //å¤§æ¥­æ…‹ã‚³ãƒ¼ãƒ‰
+	private String category_s;   //å°æ¥­æ…‹ã‚³ãƒ¼ãƒ‰
 	private String offset_page;
 
 	public String getOffset_page() {
@@ -31,7 +31,7 @@ public class RestSearchCondition {
 	}
 
 	public RestSearchCondition(){
-		;//‰½‚à‚µ‚È‚¢
+		;//ä½•ã‚‚ã—ãªã„
 	}
 
 	public RestSearchCondition(String shopName, String area, String pref, String areacode_l, String areacode_m,

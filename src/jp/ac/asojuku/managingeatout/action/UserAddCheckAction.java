@@ -1,4 +1,4 @@
-package jp.ac.asojuku.food.action;
+package jp.ac.asojuku.managingeatout.action;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import jp.ac.asojuku.food.check.UserAddCheck;
-import jp.ac.asojuku.food.dto.UserCheckStock;
+import jp.ac.asojuku.managingeatout.check.UserAddCheck;
+import jp.ac.asojuku.managingeatout.dto.UserCheckStock;
 
 public class UserAddCheckAction extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

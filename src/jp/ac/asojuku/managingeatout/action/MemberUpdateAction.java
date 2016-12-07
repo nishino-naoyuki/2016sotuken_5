@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import jp.ac.asojuku.managingeatout.DTO.UserInfoDTO;
@@ -25,13 +26,19 @@ public class MemberUpdateAction extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String us_id = "00000000";
+		HttpSession session = req.getSession(true);
+
+		session.getAttribute("us_id");
+
+
+		String us_id = (String) session.getAttribute("us_id");
 
 
 		try {
-			UserInfoDTO userInfo = getMemberInfoByUserPassword(us_id);
+			UserInfoDTO userInfo = getMemberInfoByUserPassword("us_id");
 
 			req.setAttribute("us_id",us_id);
+			req.setAttribute("mailadress", userInfo.getUs_mail());
 			req.setAttribute("shimei", userInfo.getUs_name());
 			req.setAttribute("birthday", userInfo.getUs_birth());
 			req.setAttribute("seibetsu", userInfo.getUs_gender());

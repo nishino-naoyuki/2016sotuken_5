@@ -28,10 +28,8 @@ public class MemberUpdateAction extends HttpServlet {
 
 		HttpSession session = req.getSession(true);
 
-		session.getAttribute("us_id");
 
-
-		String us_id = (String) session.getAttribute("us_id");
+		String us_id = (String) session.getAttribute("loginId");
 
 
 		try {

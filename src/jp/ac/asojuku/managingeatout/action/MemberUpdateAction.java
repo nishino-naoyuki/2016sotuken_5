@@ -32,6 +32,8 @@ public class MemberUpdateAction extends HttpServlet {
 		String us_id = (String) session.getAttribute("loginId");
 
 
+
+
 		try {
 			UserInfoDTO userInfo = getMemberInfoByUserPassword("us_id");
 

@@ -105,7 +105,7 @@ public class Cont_LoginBo {
 	            //logonInfoへ値を入れる
 	        	logonInfo.setName(rs.getString("us_name"));
 	        	loginName = rs.getString("us_name");
-	        	loginId = rs.getString("us_name");
+	        	loginId = rs.getString("us_id");
 	        	ssn.setAttribute("loginName", loginName);
 	        	ssn.setAttribute("loginId", loginId);
 

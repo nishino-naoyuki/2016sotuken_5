@@ -19,7 +19,7 @@ import jp.ac.asojuku.managingeatout.dto.Cont_LogonInfoDTO;
 public class Cont_LoginBo {
 	// ユーザーIDとパスワードを指定してユーザー情報を取得する
 	private static final String MEMBER_INFO_BY_UP_SQL =
-			"SELECT us_name FROM user WHERE us_id=? AND us_pass=?";
+			"SELECT us_id, us_name FROM user WHERE us_id=? AND us_pass=?";
 
 	Cont_LogonInfoDTO logonInfo = null;
 
@@ -78,6 +78,7 @@ public class Cont_LoginBo {
 		//セッション確立再確認
 				HttpSession ssn = req.getSession(true);
 				String loginName = "";
+				String loginId = "";
 
         try{
 			ctx = new InitialContext();
@@ -104,20 +105,15 @@ public class Cont_LoginBo {
 	            //logonInfoへ値を入れる
 	        	logonInfo.setName(rs.getString("us_name"));
 	        	loginName = rs.getString("us_name");
-
+	        	loginId = rs.getString("us_name");
 	        	ssn.setAttribute("loginName", loginName);
+	        	ssn.setAttribute("loginId", loginId);
 
 
 
 	        }
 
-	        if(loginName == null){
-	        	String error = "IDまたはパスワードが間違っています。再度確認して入力してください";
-	        	ssn.setAttribute("error", error);
-	        }else{
-	        	String error = "";
-	        	ssn.setAttribute("error", error);
-	        }
+
 
         }finally{
         	try{

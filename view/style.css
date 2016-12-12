@@ -1,4 +1,4 @@
-ï»¿/* Author:Emura */
+/* Author:Emura */
 @charset "utf-8";
 
 body{
@@ -10,6 +10,7 @@ body{
 	min-width:960px;
 	margin-right:auto;
 	margin-left:auto;
+	padding-bottom:20px;
 	text-align:center;
 	background-color:white;
 }
@@ -47,8 +48,8 @@ body{
 	position:absolute;
 	border:2px #D2691E ridge;
 	padding:6px;
-	width:350px;
-	margin-left:550px;
+	width:400px;
+	margin-left:500px;
 	margin-top:80px;
 }
 
@@ -114,11 +115,18 @@ body{
 }
 
 #minibutton{
-	/* æ–°è¦ä¼šå“¡ç™»éŒ²ã€ä¿®æ­£ã™ã‚‹ã€ç¢ºèªã™ã‚‹ */
+	/* V‹K‰ïˆõ“o˜^AC³‚·‚éAŠm”F‚·‚é */
+	border-bottom:10px;
 }
 
 .em{
-	margin-bottom:px;
+	margin-top:6px;
+	margin-bottom:6px;
+	color:red;
+}
+
+#con{
+	margin-bottom:20px;
 }
 
 p{

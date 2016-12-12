@@ -16,9 +16,9 @@
 		//web.xmlの設定に従い書きなおすこと
 		if(LN != null){
 			ref0 = "vdissr";
-			ref1 = "vdisfv";
-			ref2 = "vdishr";
-			ref3 = "vdisus";
+			ref1 = "vdisab";
+			ref2 = "vdisus";
+			ref3 = "vdisuo";
 		}else{
 			ref0 = "vdisli";
 			ref1 = "vdisli";
@@ -45,12 +45,13 @@
 
 			<div id="button"><a href="<%=request.getContextPath() %>/<%=ref0%>">
 				<img id="bb" src="${pageContext.request.contextPath}/view/bb01.png" alt="検索" height="80px"></a></div><br>
+			<!-- お気に入り跡地 -->
 			<div id="button"><a href="<%=request.getContextPath() %>/<%=ref1%>">
-				<img id="bb"src="${pageContext.request.contextPath}/view/bb02.png" alt="お気に入り" height="80px"></a></div><br>
+				<img id="bb"src="${pageContext.request.contextPath}/view/bb07.png" alt="家計簿" height="80px"></a></div><br>
 			<div id="button"><a href="<%=request.getContextPath() %>/<%=ref2%>">
-				<img id="bb"src="${pageContext.request.contextPath}/view/bb03.png" alt="履歴" height="80px"></a></div><br>
+				<img id="bb"src="${pageContext.request.contextPath}/view/bb05.png" alt="会員情報変更" height="80px"></a></div><br>
 			<div id="button"><a href="<%=request.getContextPath() %>/<%=ref3%>">
-				<img id="bb"src="${pageContext.request.contextPath}/view/bb04.png" alt="ユーザー情報" height="80px"></a></div><br>
+				<img id="bb"src="${pageContext.request.contextPath}/view/bb06.png" alt="退会" height="80px"></a></div><br>
 
 		</div>
 

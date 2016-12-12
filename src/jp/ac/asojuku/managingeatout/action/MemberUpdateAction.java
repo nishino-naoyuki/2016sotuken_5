@@ -26,6 +26,7 @@ public class MemberUpdateAction extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+
 		HttpSession session = req.getSession(true);
 
 
@@ -33,9 +34,8 @@ public class MemberUpdateAction extends HttpServlet {
 
 
 
-
 		try {
-			UserInfoDTO userInfo = getMemberInfoByUserPassword("us_id");
+			UserInfoDTO userInfo = getMemberInfoByUserPassword(us_id);
 
 			req.setAttribute("us_id",us_id);
 			req.setAttribute("mailadress", userInfo.getUs_mail());
